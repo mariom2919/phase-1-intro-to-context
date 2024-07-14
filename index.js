@@ -1,3 +1,21 @@
+function createEmployeeRecord(record) {
+  const firstName = record[0];
+  const familyName = record[1];
+  const title = record[2];
+  const payPerHour = record[3];
+  
+  return {
+    firstName,
+    familyName,
+    title,
+    payPerHour,
+    timeInEvents: [],
+    timeOutEvents: []
+  };
+}
+
+
+/*
 function createEmployeeRecord(firstName, familyName, title, payPerHour) {
     return {
       firstName,
@@ -8,10 +26,12 @@ function createEmployeeRecord(firstName, familyName, title, payPerHour) {
       timeOutEvents: []
     };
   }
+  */
   
-  function createEmployeeRecords(employeeData) {
-    return employeeData.map(employee => createEmployeeRecord(...employee));
+  function createEmployeeRecords(arrays) {
+    return arrays.map(record => createEmployeeRecord(record));
   }
+  
 
   function createTimeInEvent(employee, timeStamp) {
     const [date, hour] = timeStamp.split(' ');
